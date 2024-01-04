@@ -1,7 +1,13 @@
 ## Intalling tailwind into our App
 
 - https://tailwindcss.com/docs/guides/create-react-app
+
   - Follow the Steps
+
+- Installed Browser Router
+  - npm i -D react-router-dom
+- Build Login form
+- Sign Up Form
 
 # Features
 
@@ -14,7 +20,7 @@
   - Trailer in Background
   - Title and Description
   - Movie Suggestions
-    - MovieLists \* N
+  - MovieLists \* N
 
 -NetflixGPT
 
