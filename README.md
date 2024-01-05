@@ -25,9 +25,12 @@
 - 0.  follow the firebase documentation for Sign In and Sign Up APi.
 
 - # Redux Setup
+
   - Redux for storing login informations(userSlice)
   - Updated profile
   - Implemented SignOut
+
+- # Movies
 
 # Features
 

@@ -51,7 +51,6 @@ const Login = () => {
               dispatch(
                 addUser({ uid: uid, email: email, displayName: displayName })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
@@ -74,7 +73,6 @@ const Login = () => {
           // Sign In logic
           const user = userCredential.user;
           setErrorMessage(null);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -89,7 +87,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-          className="flex w-screen"
+          className="flex w-screen h-screen"
           src="https://assets.nflxext.com/ffe/siteui/vlv3/c38a2d52-138e-48a3-ab68-36787ece46b3/eab6047a-a101-4a14-8515-c67563fa2205/US-en-20240101-popsignuptwoweeks-perspective_alpha_website_large.jpg"
           alt="Login-BgImage"
         ></img>
