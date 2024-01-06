@@ -10,6 +10,7 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { PROFILE_ICON } from "../utils/constants.js";
 
 const Login = () => {
   const [isSignInForm, setisSignInForm] = useState(true);
@@ -30,7 +31,6 @@ const Login = () => {
     if (message) return;
     // Sign In/Sign Up Logic.
     if (!isSignInForm) {
-      console.log("Inside Sign Up Logic");
       //Sign Up logic here\
       createUserWithEmailAndPassword(
         auth,
@@ -43,7 +43,7 @@ const Login = () => {
 
           updateProfile(user, {
             displayName: name.current.value,
-            //photoURL: "https://example.com/jane-q-user/profile.jpg",
+            photoURL: PROFILE_ICON,
           })
             .then(() => {
               // Profile updated!

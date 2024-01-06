@@ -7,6 +7,7 @@ import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { removeUser } from "../utils/userSlice";
+import { LOGO, PROFILE_ICON } from "../utils/constants.js";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -14,19 +15,21 @@ const Header = () => {
   const user = useSelector((store) => store.user);
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log("use redux", user);
         const { uid, email, displayName } = user;
         dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
         navigate("/browse");
       } else {
         // User is signed out
-        console.log("call signedOut Body!!");
         dispatch(removeUser());
         navigate("/");
       }
     });
+    //unsubscribe will be called when component unmounts
+    return () => {
+      unsubscribe();
+    };
   }, []);
   const handleSignOut = () => {
     signOut(auth)
@@ -40,16 +43,12 @@ const Header = () => {
   };
   return (
     <div className="absolute w-screen bg-gradient-to-b from-black z-20 flex justify-between">
-      <img
-        className="w-44"
-        src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
-        alt="Netflix-Logo"
-      ></img>
+      <img className="w-44" src={LOGO} alt="Netflix-Logo"></img>
       {user && (
         <div className="flex p-4 gap-4">
           <img
             className="w-12 h-12"
-            src="https://occ-0-3492-879.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABequU6a1SiSgl7GOLxGW33H0qjKnFwpNoP09qrltdd5LawT0D3zD6gRFEbihU5NKsQGyeZJtbsvk6O4SXi6HgPk43chtoGA.png?r=811"
+            src={PROFILE_ICON}
             alt="Profile-Icon"
           ></img>
           <button

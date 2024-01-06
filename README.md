@@ -29,8 +29,11 @@
   - Redux for storing login informations(userSlice)
   - Updated profile
   - Implemented SignOut
+  - unsubscribed to onAuth state callback
 
-- # Movies
+- # Movies list
+  - Register TMDB API, create API KEY
+  - Get NowPlaying data from TMDB Api
 
 # Features
 
@@ -48,4 +51,5 @@
 -NetflixGPT
 
 - Search Bar
+
 - Movie Suggestions
