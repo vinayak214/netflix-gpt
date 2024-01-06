@@ -34,6 +34,11 @@
 - # Movies list
   - Register TMDB API, create API KEY
   - Get NowPlaying data from TMDB Api
+  - created custom hook for nowplaying movies
+    - updated the nowplaying data into the store
+  - created custom hook for trailer video
+    - updated the store with trailer video data.
+  - Embedded the youtube video and make it autoplay
 
 # Features
 
