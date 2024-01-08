@@ -12,3 +12,23 @@ export const API_OPTIONS = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NTFkYWJkMTlmMmE0Yjc5MWZlOWU2MWE4MjM3NTU2NiIsInN1YiI6IjY1OTgyOWY4NjBjNTFkNGU2ZTk3ODc5ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.JwEOTAzOUeuphRIPttpyW5jyt1modr16TETvjrcmbL0",
   },
 };
+
+export const MOVIE_CARD_IMAGE = "https://image.tmdb.org/t/p/w780";
+
+export const BACKGROUND_IMAGE_URL =
+  "https://assets.nflxext.com/ffe/siteui/vlv3/c38a2d52-138e-48a3-ab68-36787ece46b3/eab6047a-a101-4a14-8515-c67563fa2205/US-en-20240101-popsignuptwoweeks-perspective_alpha_website_large.jpg";
+
+export const SUPPORTED_LANGUAGES = [
+  {
+    identifier: "en",
+    name: "English",
+  },
+  {
+    identifier: "hindi",
+    name: "Hindi",
+  },
+  {
+    identifier: "Malayalam",
+    name: "Malayalam",
+  },
+];

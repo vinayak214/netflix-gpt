@@ -3,23 +3,28 @@ import Header from "./Header";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
+import usePopularMovies from "../hooks/usePopularMovies";
+import useUpcomingMovies from "../hooks/useUpcomingMovies";
+import GptSearch from "./GptSearch";
+import { useSelector } from "react-redux";
 
 const Browse = () => {
-  useNowPlayingMovies();
+  const toggleGpt = useSelector((store) => store.gpt.showGptSearch);
 
+  useNowPlayingMovies();
+  usePopularMovies();
+  useUpcomingMovies();
   return (
     <div>
       <Header />
-      <MainContainer />
-      {/* <SecondaryContainer /> */}
-      {/*
-           MainContainer
-             -VideoBackground
-             -VideoTitle
-          Secondary Container
-             - MovieList *n 
-              - cards * n
-       */}
+      {toggleGpt ? (
+        <GptSearch />
+      ) : (
+        <>
+          <MainContainer />
+          <SecondaryContainer />
+        </>
+      )}
     </div>
   );
 };
